@@ -1,3 +1,4 @@
 export default () => ({
-  drawer: false
+  drawer: false,
+  welcome_screen: true
 });

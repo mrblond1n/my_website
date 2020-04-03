@@ -6,7 +6,7 @@
 
         <client-only>
           <vue-typed-js
-            :strings="[message]"
+            :strings="[message.toUpperCase()]"
             :showCursor="true"
             @onComplete="destroy_welcome_screen"
             :contentType="'html'"

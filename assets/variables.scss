@@ -2,4 +2,13 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
-$body-font-family: "Raleway", sans-serif;
+
+@font-face {
+  font-family: "BlenderPro";
+  src: url("~@/static/fonts/blenderPro/BlenderPro-Book.woff2") format("woff2"),
+    url("~@/static/fonts/blenderPro/BlenderPro-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$body-font-family: "BlenderPro", sans-serif;

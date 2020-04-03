@@ -10,26 +10,6 @@
   animation: turn_on_highlight 5s linear forwards;
 }
 
-/*.text::after,
-.text::before {
-  content: "";
-  display: block;
-  width: 3px;
-  height: 200px;
-  background: rgb(128, 128, 128);
-  position: absolute;
-  box-shadow: 7px 10px 7px #000;
-}
-
-.text::after {
-  right: 5px;
-  top: -175px;
-}
-.text::before {
-  left: 5px;
-  top: -175px;
-}*/
-
 .wrapper .text:hover {
   /* animation: neon 20s ease-in-out infinite alternate; */
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffdd1b,
@@ -55,18 +35,10 @@
   12%,
   18.999%,
   23%,
-  31.999%,
-  37%,
-  44.999%,
-  46%,
-  49.999%,
-  51%,
-  58.999%,
-  61%,
-  68.999%,
-  71%,
+  79.999%,
+  82%,
   85.999%,
-  96%,
+  88%,
   100% {
     color: white;
     text-shadow: 10px 10px 10px #000, 0 0 10px #fff, 0 0 20px #fff,
@@ -75,19 +47,43 @@
   }
   19%,
   22.99%,
-  32%,
-  36.999%,
-  45%,
-  45.999%,
-  50%,
-  50.99%,
-  59%,
-  60.999%,
-  69%,
-  70.999%,
+  80%,
+  81.999%,
   86%,
-  95.999% {
+  87.999% {
     text-shadow: 10px 10px 5px #000;
     color: black;
+  }
+}
+
+@keyframes translate_left {
+  from {
+    transform: translateX(0px);
+    background-position-x: 30%;
+  }
+  to {
+    transform: translateX(-250px);
+    background-position-x: 0%;
+  }
+}
+@keyframes translate_right {
+  from {
+    transform: translateX(0px);
+    background-position-x: 70%;
+  }
+  to {
+    transform: translateX(250px);
+    background-position-x: 100%;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

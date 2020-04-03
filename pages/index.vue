@@ -20,6 +20,6 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url(~/assets/neon.scss);
+<style scoped lang="sass">
+@import url(~/assets/neon.scss)
 </style>

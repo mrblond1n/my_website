@@ -1,0 +1,41 @@
+@keyframes change_background {
+  from {
+    background: black;
+    color: white;
+  }
+  to {
+    background: white;
+    color: black;
+  }
+}
+@keyframes translate_left {
+  from {
+    transform: translateX(0px);
+    background-position-x: 50%;
+  }
+  to {
+    transform: translateX(-250px);
+    background-position-x: 0%;
+  }
+}
+@keyframes translate_right {
+  from {
+    transform: translateX(0px);
+    background-position-x: 50%;
+  }
+  to {
+    transform: translateX(250px);
+    background-position-x: 100%;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

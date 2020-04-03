@@ -1,8 +1,11 @@
 <template>
   <div class="welcome-screen" :class="{active: active_destroy}">
+    <!-- <div class="welcome-screen"> -->
     <v-container style="height: 100%">
       <v-layout justify-space-between align-center style="height: 100%">
-        <div :class="{translate_left: active_destroy}" class="neon neon--blue"></div>
+        <div class="neon-wrapper" :class="{translate_left: active_destroy}">
+          <div class="neon neon--blue"></div>
+        </div>
 
         <client-only>
           <vue-typed-js
@@ -15,7 +18,10 @@
             <h1 class="typing text-center"></h1>
           </vue-typed-js>
         </client-only>
-        <div :class="{translate_right: active_destroy}" class="neon neon--pink"></div>
+        <!-- <div class="neon-wrapper"> -->
+        <div class="neon-wrapper" :class="{translate_right: active_destroy}">
+          <div class="neon neon--pink"></div>
+        </div>
       </v-layout>
     </v-container>
   </div>
@@ -34,8 +40,7 @@ export default {
       this.active_destroy = true;
       setTimeout(() => {
         this.$store.dispatch("shared/welcome_screen", false);
-        console.log(this.$store.getters["shared/welcome_screen"]);
-      }, 3000);
+      }, 4000);
     }
   }
 };
@@ -60,6 +65,17 @@ $pink: rgb(196, 90, 232);
   justify-content: center;
 }
 
+.neon-wrapper {
+  padding: 100px;
+  height: 100vh;
+
+  box-shadow: inset 0 0 30px 40px rgba(0, 0, 0, 0.9);
+  background-image: url("~assets/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: center;
+}
 .neon {
   height: 90%;
   width: 10px;
@@ -75,7 +91,7 @@ $pink: rgb(196, 90, 232);
 }
 
 .active {
-  animation: fade 3s forwards;
+  animation: fade 4s forwards;
 }
 
 .translate_left {
@@ -97,17 +113,21 @@ $pink: rgb(196, 90, 232);
 @keyframes translate_left {
   from {
     transform: translateX(0px);
+    background-position-x: 50%;
   }
   to {
-    transform: translateX(-200px);
+    transform: translateX(-250px);
+    background-position-x: 0%;
   }
 }
 @keyframes translate_right {
   from {
     transform: translateX(0px);
+    background-position-x: 50%;
   }
   to {
-    transform: translateX(200px);
+    transform: translateX(250px);
+    background-position-x: 100%;
   }
 }
 @keyframes fade {

@@ -2,7 +2,10 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="wrapper">
-        <div class="text">Made with NUXT JS</div>
+        <div
+          class="text"
+          :class="{active: !$store.getters['shared/welcome_screen']}"
+        >Made with NUXT JS</div>
       </div>
     </v-flex>
   </v-layout>

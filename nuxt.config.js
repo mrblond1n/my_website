@@ -36,7 +36,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~/plugins/vue-typed", ssr: false }],
+  plugins: [
+    { src: "~/plugins/vue-typed", ssr: false },
+    { src: "~/plugins/cursor-fx", ssr: false }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

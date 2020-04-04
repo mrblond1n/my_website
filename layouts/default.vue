@@ -9,15 +9,19 @@
     </v-content>
     <welcome-screen v-if="$store.getters['shared/welcome_screen']" />
     <app-footer />
-    <!-- <app-cursor :option="{width: 40, height: 40, outsideCircle: true}" /> -->
-    <app-cursor
+
+    <!-- <app-cursor
       :targets="['img', 'a', 'button', 'your-hover-class']"
       :circleColor="'#fff'"
       :circleColorHover="'#2f2f2f'"
       :dotColor="'#fff'"
       :dotColorHover="'lightgray'"
       :hoverSize="1.8"
-    />
+    />-->
+    <client-only>
+      <cursor-fx v-if="browser === 'safari'" color="#fff" />
+      <app-cursor v-else :option="{width: 40, height: 40, outsideCircle: true}" />
+    </client-only>
   </v-app>
 </template>
 
@@ -26,8 +30,11 @@ import appFooter from "~/components/_footer";
 import appNav from "~/components/_navigation";
 import appHeader from "~/components/_header";
 import welcomeScreen from "~/components/welcome_screen";
-import appCursor from "~/components/custom_cursor";
+import appCursor from "~/components/Cursor";
+
+import detect_browser from "~/middleware/detect_browser";
 export default {
+  // middleware: "detect_browser",
   components: {
     appFooter,
     appNav,
@@ -41,6 +48,9 @@ export default {
   computed: {
     drawer() {
       return this.$store.getters["shared/drawer"];
+    },
+    browser() {
+      return this.$store.getters["shared/browser"];
     }
   },
   mounted() {
@@ -61,6 +71,9 @@ export default {
       }, 500);
       this.$store.getters["shared/cursor_option"];
     });
+  },
+  mounted() {
+    this.$store.dispatch("shared/browser", detect_browser());
   }
 };
 </script>

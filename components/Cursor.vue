@@ -25,11 +25,8 @@ export default {
       return {
         width: `${this.option.width}px`,
         height: `${this.option.height}px`,
-        transform: `translate(${this.cur_opt.top -
-          this.option.height / 2},${this.cur_opt.left -
-          this.option.width / 2}px )`
-        // top: `${this.cur_opt.top - this.option.height / 2}px`,
-        // left: `${this.cur_opt.left - this.option.width / 2}px`
+        top: `${this.cur_opt.top - this.option.height / 2}px`,
+        left: `${this.cur_opt.left - this.option.width / 2}px`
       };
     }
   },
@@ -38,7 +35,9 @@ export default {
       return this.$store.getters["shared/cursor_option"];
     }
   },
-  mounted() {}
+  mounted() {
+    window.addEventListener("mousemove", this.customCursor);
+  }
 };
 </script>
 

@@ -9,5 +9,10 @@ export default {
     Object.entries(payload).forEach(([key, value]) => {
       state.cursor_option[key] = value;
     });
+  },
+  browser(state, payload) {
+    console.log(payload);
+
+    state.browser = payload;
   }
 };

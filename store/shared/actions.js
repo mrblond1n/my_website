@@ -7,8 +7,5 @@ export default {
   },
   cursor_option({ commit }, payload) {
     commit("cursor_option", payload);
-  },
-  browser({ commit }, payload) {
-    commit("browser", payload);
   }
 };

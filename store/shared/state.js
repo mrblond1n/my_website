@@ -6,5 +6,4 @@ export default () => ({
     left: 0,
     clicked: false
   },
-  browser: ""
 });

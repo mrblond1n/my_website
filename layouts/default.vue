@@ -9,12 +9,8 @@
     </v-content>
     <welcome-screen v-if="$store.getters['shared/welcome_screen']" />
     <app-footer />
-    <!-- Cursors -->
     <client-only>
-      <!-- <cursor-fx v-if="browser === 'safari'" color="#fff" ref="cursor_safari" />
-      <app-cursor v-else :option="{width: 40, height: 40, outsideCircle: true}" />-->
-      <!-- <app-cursor :option="{width: 40, height: 40, outsideCircle: true}" /> -->
-      <cursor-fx color="#fff" color-hover="#fff" ref="cursor_safari" />
+      <cursor-fx color="#fff" color-hover="#fff" />
     </client-only>
   </v-app>
 </template>
@@ -38,14 +34,6 @@ export default {
   computed: {
     drawer() {
       return this.$store.getters["shared/drawer"];
-    },
-    browser() {
-      return this.$store.getters["shared/browser"];
-    }
-  },
-  methods: {
-    test() {
-      console.log("click");
     }
   }
 };

@@ -4,5 +4,10 @@ export default {
   },
   welcome_screen(state, payload) {
     state.welcome_screen = payload;
+  },
+  cursor_option(state, payload) {
+    Object.entries(payload).forEach(([key, value]) => {
+      state.cursor_option[key] = value;
+    });
   }
 };

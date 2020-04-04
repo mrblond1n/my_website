@@ -22,4 +22,8 @@ export default {
 
 <style scoped lang="sass">
 @import url(~/assets/neon.scss)
+.text
+  -moz-user-select: none
+  -khtml-user-select: none
+  user-select: none
 </style>

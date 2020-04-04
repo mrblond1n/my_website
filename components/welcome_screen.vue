@@ -44,65 +44,60 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import url(~/assets/neon.scss);
+<style lang="sass" scoped>
+@import url(~/assets/neon.scss)
 
-.welcome-screen {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: #000;
-  z-index: 9999;
-}
-.typed-cursor {
-  font-size: 30px !important;
-}
-.typed-element {
-  width: 80%;
-  justify-content: center;
-}
+.welcome-screen
+  height: 100%
+  width: 100%
+  position: absolute
+  background: #000
+  z-index: 9999
 
-$blue: rgb(43, 100, 160);
-$pink: rgb(196, 90, 232);
+.typed-cursor
+  font-size: 30px !important
 
-.neon-wrapper {
-  padding: 100px;
-  height: 100vh;
+.typed-element
+  width: 80%
+  justify-content: center
 
-  box-shadow: inset 0 0 30px 40px rgba(0, 0, 0, 0.9);
-  background-image: url("~assets/background.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+$blue: rgb(43, 100, 160)
+$pink: rgb(196, 90, 232)
 
-  background-position-y: center;
-  &--right {
-    background-position-x: 70%;
-  }
-  &--left {
-    background-position-x: 30%;
-  }
-}
-.neon {
-  height: 90%;
-  width: 10px;
-  border-radius: 10px;
-  &--pink {
-    box-shadow: 0 0 100px 20px $pink, 0 0 50px 10px #f0f, 0 0 20px 10px #00f;
-    background: $pink;
-  }
-  &--blue {
-    background: $blue;
-    box-shadow: 0 0 100px 20px $blue, 0 0 50px 10px #f0f, 0 0 20px 10px #00f;
-  }
-}
+.neon-wrapper
+  padding: 100px
+  height: 100vh
 
-.active {
-  animation: fade 4s forwards;
-}
-.translate_left {
-  animation: translate_left 3s forwards;
-}
-.translate_right {
-  animation: translate_right 3s forwards;
-}
+  box-shadow: inset 0 0 30px 40px rgba(0, 0, 0, 0.9)
+  background-image: url("~assets/background.jpeg")
+  background-size: cover
+  background-repeat: no-repeat
+
+  background-position-y: center
+  &--right
+    background-position-x: 70%
+
+  &--left
+    background-position-x: 30%
+
+.neon
+  height: 90%
+  width: 10px
+  border-radius: 10px
+  &--pink
+    box-shadow: 0 0 100px 20px $pink, 0 0 50px 10px #f0f, 0 0 20px 10px #00f
+    background: $pink
+
+  &--blue
+    background: $blue
+    box-shadow: 0 0 100px 20px $blue, 0 0 50px 10px #f0f, 0 0 20px 10px #00f
+
+.active
+  animation: fade 4s forwards
+
+.translate_left
+  animation: translate_left 3s forwards
+
+.translate_right
+  animation: translate_right 3s forwards
 </style>

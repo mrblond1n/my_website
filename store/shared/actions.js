@@ -4,5 +4,8 @@ export default {
   },
   welcome_screen({ commit }, payload) {
     commit("welcome_screen", payload);
+  },
+  lang({ commit }, payload) {
+    commit("lang", payload);
   }
 };

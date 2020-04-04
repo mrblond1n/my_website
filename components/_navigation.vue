@@ -23,7 +23,10 @@ export default {
       set: () => {}
     },
     nav_list() {
-      return this.$store.getters["navigation/list_en"];
+      return this.$store.getters[`navigation/list_${this.lang}`];
+    },
+    lang() {
+      return this.$store.getters["shared/lang"];
     }
   },
   methods: {

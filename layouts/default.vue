@@ -21,6 +21,8 @@ import appNav from "~/components/_navigation";
 import appHeader from "~/components/_header";
 import welcomeScreen from "~/components/welcome_screen";
 
+import detect_user_lang from "~/library/detect_user_lang";
+
 export default {
   components: {
     appFooter,
@@ -35,6 +37,9 @@ export default {
     drawer() {
       return this.$store.getters["shared/drawer"];
     }
+  },
+  mounted() {
+    this.$store.dispatch("shared/lang", detect_user_lang());
   }
 };
 </script>

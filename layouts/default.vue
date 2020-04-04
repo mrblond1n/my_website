@@ -9,18 +9,12 @@
     </v-content>
     <welcome-screen v-if="$store.getters['shared/welcome_screen']" />
     <app-footer />
-
-    <!-- <app-cursor
-      :targets="['img', 'a', 'button', 'your-hover-class']"
-      :circleColor="'#fff'"
-      :circleColorHover="'#2f2f2f'"
-      :dotColor="'#fff'"
-      :dotColorHover="'lightgray'"
-      :hoverSize="1.8"
-    />-->
+    <!-- Cursors -->
     <client-only>
-      <cursor-fx v-if="browser === 'safari'" color="#fff" />
-      <app-cursor v-else :option="{width: 40, height: 40, outsideCircle: true}" />
+      <!-- <cursor-fx v-if="browser === 'safari'" color="#fff" ref="cursor_safari" />
+      <app-cursor v-else :option="{width: 40, height: 40, outsideCircle: true}" />-->
+      <!-- <app-cursor :option="{width: 40, height: 40, outsideCircle: true}" /> -->
+      <cursor-fx color="#fff" color-hover="#fff" ref="cursor_safari" />
     </client-only>
   </v-app>
 </template>
@@ -30,17 +24,13 @@ import appFooter from "~/components/_footer";
 import appNav from "~/components/_navigation";
 import appHeader from "~/components/_header";
 import welcomeScreen from "~/components/welcome_screen";
-import appCursor from "~/components/Cursor";
 
-import detect_browser from "~/middleware/detect_browser";
 export default {
-  // middleware: "detect_browser",
   components: {
     appFooter,
     appNav,
     appHeader,
-    welcomeScreen,
-    appCursor
+    welcomeScreen
   },
   data() {
     return { show_welcome_screen: true };
@@ -53,34 +43,20 @@ export default {
       return this.$store.getters["shared/browser"];
     }
   },
-  mounted() {
-    this.$refs.app.$el.addEventListener("mousemove", e => {
-      this.$store.dispatch("shared/cursor_option", {
-        top: e.pageY,
-        left: e.pageX
-      });
-    });
-    this.$refs.app.$el.addEventListener("click", e => {
-      this.$store.dispatch("shared/cursor_option", {
-        clicked: true
-      });
-      setTimeout(() => {
-        this.$store.dispatch("shared/cursor_option", {
-          clicked: false
-        });
-      }, 500);
-      this.$store.getters["shared/cursor_option"];
-    });
-  },
-  mounted() {
-    this.$store.dispatch("shared/browser", detect_browser());
+  methods: {
+    test() {
+      console.log("click");
+    }
   }
 };
 </script>
 
 <style lang="sass">
+*
+  cursor: none !important
 body
   cursor: none
 .main__content
   background: url("~assets/background.jpeg") center center / cover no-repeat
+  background-attachment: fixed
 </style>

@@ -2,6 +2,12 @@ import colors from "vuetify/es5/util/colors";
 
 export default {
   mode: "universal",
+  pageTransition: {
+    name: "page",
+    mode: "out-in",
+    enterActiveClass: "animated fadeInRight",
+    leaveActiveClass: "animated fadeOutRight"
+  },
   /*
    ** Headers of the page
    */
@@ -49,7 +55,8 @@ export default {
    */
   modules: [
     // Doc: https://github.com/nuxt-community/dotenv-module
-    "@nuxtjs/dotenv"
+    "@nuxtjs/dotenv",
+    "@neneos/nuxt-animate.css"
   ],
   /*
    ** vuetify module configuration

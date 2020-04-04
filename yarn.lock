@@ -800,6 +800,20 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@luxdamore/vue-cursor-fx@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@luxdamore/vue-cursor-fx/-/vue-cursor-fx-1.4.0.tgz#5d13f9cc446d957d90c07f09ee91b9b2fedd99a9"
+  integrity sha512-ftMBpXjcaWUo5cVa1gblvyea0+n4bNXcvcVPI0Fj/zFQyqb2Nwe3yPM4voJ9yLpG9DR4gTDmIxy9vaGTwADndQ==
+  dependencies:
+    vue "^2.6.11"
+
+"@neneos/nuxt-animate.css@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@neneos/nuxt-animate.css/-/nuxt-animate.css-0.0.1.tgz#317730ec099b2dad29147977581c4af8ab595c7b"
+  integrity sha512-w8ilu2VyJ/WLHwfz7f1C+dUsRM7c5brZbbBpxzRLErpetX0jrOhgrpdzqB+VSSTafH3qbKz6MqVhZDGNhHJmqQ==
+  dependencies:
+    animate.css "^3.6.1"
+
 "@nuxt/babel-preset-app@2.12.2":
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/@nuxt/babel-preset-app/-/babel-preset-app-2.12.2.tgz#0e87c4f4f578868e74f6fa9e2a38cace5c77dac8"
@@ -1375,6 +1389,11 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+animate.css@^3.6.1:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.2.tgz#e73e0d50e92cb1cfef1597d9b38a9481020e08ea"
+  integrity sha512-0bE8zYo7C0KvgOYrSVfrzkbYk6IOTVPNqkiHg2cbyF4Pq/PXzilz4BRWA3hwEUBoMp5VBgrC29lQIZyhRWdBTw==
 
 ansi-align@^3.0.0:
   version "3.0.0"

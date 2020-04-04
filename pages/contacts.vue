@@ -2,7 +2,7 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <div class="wrapper">
-        <h1>about</h1>
+        <h1>Contacts</h1>
       </div>
     </v-flex>
   </v-layout>

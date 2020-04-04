@@ -3,7 +3,7 @@
     <app-nav />
     <app-header />
     <v-content class="main__content">
-      <v-container>
+      <v-container class="h-100">
         <nuxt />
       </v-container>
     </v-content>
@@ -49,6 +49,8 @@ export default {
   cursor: none !important
 body
   cursor: none
+.card
+  color: black
 .main__content
   background: url("~assets/background.jpeg") center center / cover no-repeat
   background-attachment: fixed

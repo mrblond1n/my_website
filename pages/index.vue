@@ -1,29 +1,27 @@
 <template>
   <v-layout column justify-center align-center>
+    <div class="wrapper my-5">
+      <h1
+        class="text text-center"
+        :class="{active: !$store.getters['shared/welcome_screen']}"
+      >Made with NUXT JS</h1>
+    </div>
     <section>
       <v-layout column align-center justify-space-around>
-        <div class="wrapper my-5">
-          <div
-            class="text text-center"
-            :class="{active: !$store.getters['shared/welcome_screen']}"
-          >Made with NUXT JS</div>
-        </div>
-        <v-card max-width="500px" elevation="12" class="my-5">
+        <v-card max-width="300px" elevation="12" class="my-5">
           <v-img
             :src="require(`~/assets/${info.src}`)"
             class="white--text align-end"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="300px"
             width="100%"
-          ></v-img>
-          <v-card-title class="display-1 text-uppercase">{{info.name}}</v-card-title>
-          <v-card-subtitle>{{info.position}}</v-card-subtitle>
-          <v-card-actions>
-            <v-spacer></v-spacer>
+          >
             <v-btn icon color="warning" @click="show_modal">
               <v-icon>mdi-file-account</v-icon>
             </v-btn>
-          </v-card-actions>
+          </v-img>
+          <v-card-title class="display-1 text-uppercase text-break">{{info.name}}</v-card-title>
+          <v-card-subtitle>{{info.position}}</v-card-subtitle>
         </v-card>
       </v-layout>
     </section>

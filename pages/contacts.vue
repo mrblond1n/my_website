@@ -3,8 +3,8 @@
     <h1 class="display-2 text-uppercase my-5">{{lang === 'ru' ? 'Связаться': 'Get in touch'}}</h1>
     <section>
       <v-layout justify-space-around wrap>
-        <app-card :info="contacts"></app-card>
-        <app-card :info="social"></app-card>
+        <app-card width="300" :info="contacts"></app-card>
+        <app-card width="300" :info="social"></app-card>
       </v-layout>
     </section>
   </v-layout>

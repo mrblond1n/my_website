@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <v-card class="ma-5 pa-3" min-width="300px" color="rgba(0,0,0, .8)" elevation="24">
+    <v-card class="ma-5 pa-3" :width="width" color="rgba(0,0,0, .8)" elevation="24">
       <v-card-title v-text="info.title" />
 
       <v-list :disabled="disabled">
@@ -36,6 +36,10 @@ export default {
     dense: {
       type: Boolean,
       default: false
+    },
+    width: {
+      type: String,
+      default: ""
     }
   }
 };

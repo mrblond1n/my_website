@@ -1,7 +1,7 @@
 <template>
   <v-app-bar clipped-left fixed app color="rgba(0, 0, 0, .5)">
     <v-app-bar-nav-icon @click.stop="show_drawer" />
-    <v-tabs align-with-title color="warning">
+    <v-tabs align-with-title color="warning" class="d-none d-sm-flex">
       <v-tab v-for="item in nav_list" :to="item.path" :key="item.name">{{item.name}}</v-tab>
     </v-tabs>
     <v-spacer></v-spacer>

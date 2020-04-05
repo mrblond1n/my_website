@@ -1,15 +1,18 @@
 <template>
   <div class="welcome-screen" :class="{active: active_destroy}">
-    <!-- <div class="welcome-screen"> -->
     <v-container style="height: 100%">
       <v-layout justify-space-between align-center style="height: 100%">
-        <div class="neon-wrapper neon-wrapper--left" :class="{translate_left: active_destroy}">
+        <div
+          class="neon-wrapper neon-wrapper--left d-none d-sm-flex"
+          :class="{translate_left: active_destroy}"
+        >
           <div class="neon neon--blue"></div>
         </div>
         <client-only>
           <vue-typed-js
+            style="width: 100%"
             :strings="[message.toUpperCase()]"
-            :showCursor="true"
+            :showCursor="false"
             @onComplete="destroy_welcome_screen"
             :contentType="'html'"
             :smartBackspace="true"
@@ -17,7 +20,10 @@
             <h1 class="typing text-center"></h1>
           </vue-typed-js>
         </client-only>
-        <div class="neon-wrapper neon-wrapper--right" :class="{translate_right: active_destroy}">
+        <div
+          class="neon-wrapper neon-wrapper--right d-none d-sm-flex"
+          :class="{translate_right: active_destroy}"
+        >
           <div class="neon neon--pink"></div>
         </div>
       </v-layout>
@@ -31,7 +37,7 @@ import disabled_scroll from "~/library/disabled_scroll";
 export default {
   data() {
     return {
-      message: "Hello, my friend.^1000 I am glad to see you on my site",
+      message: "Hello.^1000 Welcome to my website",
       active_destroy: false
     };
   },
@@ -58,7 +64,7 @@ export default {
   z-index: 9999
 
 .typed-cursor
-  font-size: 30px !important
+  font-size: 40px !important
 
 .typed-element
   width: 80%

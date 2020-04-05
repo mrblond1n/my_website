@@ -20,7 +20,7 @@
           <v-card-subtitle>{{info.position}}</v-card-subtitle>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn icon color="yellow">
+            <v-btn icon color="warning" @click="show_modal">
               <v-icon>mdi-file-account</v-icon>
             </v-btn>
           </v-card-actions>
@@ -47,6 +47,11 @@ export default {
     },
     info() {
       return this.$store.getters[`info/home_${this.lang}`];
+    }
+  },
+  methods: {
+    show_modal() {
+      this.$store.dispatch("shared/modal", true);
     }
   }
 };

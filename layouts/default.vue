@@ -13,6 +13,7 @@
     <client-only>
       <cursor-fx color="#fff" color-hover="#fff" />
     </client-only>
+    <app-modal />
   </v-app>
 </template>
 
@@ -21,6 +22,7 @@ import appFooter from "~/components/_footer";
 import appNav from "~/components/_navigation";
 import appHeader from "~/components/_header";
 import welcomeScreen from "~/components/welcome_screen";
+import appModal from "~/components/modal";
 
 import detect_user_lang from "~/library/detect_user_lang";
 
@@ -29,7 +31,8 @@ export default {
     appFooter,
     appNav,
     appHeader,
-    welcomeScreen
+    welcomeScreen,
+    appModal
   },
   data() {
     return { show_welcome_screen: true };

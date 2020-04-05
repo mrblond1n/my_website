@@ -1,19 +1,6 @@
 <template>
   <client-only>
     <v-card class="ma-5 pa-3" min-width="300" min-height="400" elevation="24">
-      <!-- <v-list :disabled="disabled" :dense="dense">
-        <v-subheader>{{info.title}}</v-subheader>
-        <v-list-item-group color="primary">
-          <v-list-item v-for="(item, i) in info.list" :key="i" @click="() => {}">
-            <v-list-item-icon v-if="item.icon">
-              <v-icon v-text="item.icon"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.text ? item.text : item"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>-->
       <v-card-title v-text="info.title" />
       <v-list :disabled="disabled" :dense="dense">
         <v-list-item

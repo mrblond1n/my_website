@@ -17,6 +17,7 @@
     "@luxdamore/vue-cursor-fx": "^1.4.0",
     "@neneos/nuxt-animate.css": "^0.0.1",
     "@nuxtjs/dotenv": "^1.4.0",
+    "aos": "^2.3.4",
     "nuxt": "^2.0.0",
     "vue-typed-js": "^0.1.2"
   },

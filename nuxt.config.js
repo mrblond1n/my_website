@@ -38,12 +38,13 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["aos/dist/aos.css", "assets/main.css"],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     { src: "~/plugins/vue-typed", ssr: false },
+    { src: "~/plugins/aos", ssr: false },
     { src: "~/plugins/cursor-fx", ssr: false }
   ],
   /*

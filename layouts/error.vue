@@ -1,14 +1,12 @@
 <template>
-  <v-layout justify-center>
-    <div id="abc">
-      <p id="error">Error</p>
-      <p id="code">
-        4
-        <span>0</span>
-        <span>4</span>
-        not found
-      </p>
-    </div>
+  <v-layout justify-center column align-center class="wrapper">
+    <h1 class="text">Error</h1>
+    <p class="code">
+      4
+      <span>0</span>
+      <span>4</span>
+      not found
+    </p>
   </v-layout>
 </template>
 
@@ -24,64 +22,34 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 20px;
-}
-#abc {
+.wrapper {
   padding: 40px;
-  font-size: 75px;
+  font-size: 4rem;
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
   color: red;
 }
-div p {
-  margin: 0;
-}
 
-#error {
-  font-weight: 900;
+.text {
   color: #fff;
   text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff,
     0 0 30px #ffffff, 0 0 80px #008000, 0 0 70px #0000ff;
 }
-#error span {
-  animation: upper 11s linear infinite;
-}
 
-#code {
+.code,
+.text {
   font-weight: 900;
 }
-#code span:nth-of-type(2) {
+.code span:nth-of-type(2) {
   animation: lower 10s linear infinite;
 }
-#code span:nth-of-type(1) {
+.code span:nth-of-type(1) {
   text-shadow: none;
   opacity: 0.8;
-  color: black;
+  color: rgba(113, 44, 44, 0.879);
 }
-@keyframes upper {
-  0%,
-  19.999%,
-  22%,
-  62.999%,
-  64%,
-  64.999%,
-  70%,
-  100% {
-    opacity: 0.99;
-    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
-  }
-  20%,
-  21.999%,
-  63%,
-  63.999%,
-  65%,
-  69.999% {
-    opacity: 0.4;
-    text-shadow: none;
-  }
-}
+
 @keyframes lower {
   0%,
   12%,
@@ -118,7 +86,7 @@ div p {
   86%,
   95.999% {
     opacity: 0.7;
-    text-shadow: none;
+    text-shadow: 0px 0px 5px black;
   }
 }
 </style>

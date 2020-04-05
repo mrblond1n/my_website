@@ -83,5 +83,42 @@ export default () => ({
         "Love for clean and clear coding (kiss, dry)"
       ]
     }
+  ],
+  contacts_ru: [
+    { title: "phone", icon: "mdi-phone", ctx: "+7 999 002-61-98" },
+    { title: "email", icon: "mdi-email", ctx: "nikita.kirdiapin@gmail.com" },
+    { title: "location", icon: "mdi-map-marker", ctx: "Россия, Москва" },
+    {
+      title: "position",
+      icon: "mdi-check-circle-outline",
+      ctx: "Открыт к предложениям"
+    }
+  ],
+  contacts_en: [
+    { title: "phone", icon: "mdi-phone", ctx: "+7 999 002-61-98" },
+    { title: "email", icon: "mdi-email", ctx: "nikita.kirdiapin@gmail.com" },
+    { title: "location", icon: "mdi-map-marker", ctx: "Russia, Moscow" },
+    {
+      title: "position",
+      icon: "mdi-check-circle-outline",
+      ctx: "Available for offer"
+    }
+  ],
+  social: [
+    {
+      title: "github",
+      src: "https://github.com/mrblond1n",
+      icon: "mdi-github"
+    },
+    {
+      title: "linkedin",
+      src: "https://www.linkedin.com/in/ipestilenz/",
+      icon: "mdi-linkedin"
+    },
+    {
+      title: "vk",
+      src: "https://vk.com/ipestilenz",
+      icon: "mdi-vk"
+    }
   ]
 });

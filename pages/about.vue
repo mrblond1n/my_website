@@ -2,13 +2,7 @@
   <v-layout column justify-center align-center>
     <section>
       <v-layout class="h-100" column align-center justify-space-around>
-        <!-- <h1 class="display-2 text-uppercase">Обо мне</h1> -->
-        <div class="wrapper my-5">
-          <h1
-            class="text text-center text-uppercase"
-            :class="{active: !$store.getters['shared/welcome_screen']}"
-          >Обо мне</h1>
-        </div>
+        <h1 class="display-2 text-uppercase my-5">{{lang === 'ru' ? 'Резюме': 'Resume'}}</h1>
         <v-card
           class="my-5 pa-3"
           v-for="(item, index) in info"

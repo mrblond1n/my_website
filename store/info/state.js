@@ -2,12 +2,12 @@ export default () => ({
   home_ru: {
     name: "Никита Кирдяпин",
     position: "Frontend developer - VueJs",
-    src: "photo.jpg"
+    src: "photo.jpg",
   },
   home_en: {
     name: "Nikita Kirdiapin",
     position: "Frontend developer - VueJs",
-    src: "photo.jpg"
+    src: "photo.jpg",
   },
   about_ru: [
     {
@@ -21,8 +21,8 @@ export default () => ({
         "Опыт работы с webpack, gulp",
         "Опыт работы с VCS (git)",
         "AJAX, WebSocket, понимание принципов функционирования сети Интернет и протокола HTTP",
-        "Препроцессоры Sass/Scss и графические библиотеки 'Bootstrap', 'Vuetify'"
-      ]
+        "Препроцессоры Sass/Scss и графические библиотеки 'Bootstrap', 'Vuetify'",
+      ],
     },
     {
       title: "Чего я ищу",
@@ -31,8 +31,8 @@ export default () => ({
         "Возможности роста и самосовершенствования",
         "Хороший и адекватный коллектив",
         "Возможность удаленной работы",
-        "В идеале - удаленная работа"
-      ]
+        "В идеале - удаленная работа",
+      ],
     },
     {
       title: "Что я могу предложить",
@@ -42,9 +42,9 @@ export default () => ({
         "Ответственность за свою работу",
         "Адекватное отношение к замечаниям и критике",
         "Быстрое включение в работу",
-        "Любовь к чистому и понятному кодингу (kiss, dry)"
-      ]
-    }
+        "Любовь к чистому и понятному кодингу (kiss, dry)",
+      ],
+    },
   ],
   about_en: [
     {
@@ -59,8 +59,8 @@ export default () => ({
         "Experience with webpack, gulp",
         "Experience with VCS (git)",
         "AJAX, WebSocket, understanding of the principles of the Internet and the HTTP protocol",
-        "Preprocessors Sass/Scss and graphic libraries 'Bootstrap', 'Vuetify'"
-      ]
+        "Preprocessors Sass/Scss and graphic libraries 'Bootstrap', 'Vuetify'",
+      ],
     },
     {
       title: "Looking for...",
@@ -69,8 +69,8 @@ export default () => ({
         "Opportunities for growth and self-improvement",
         "Good and adequate staff",
         "The possibility of remote work",
-        "Ideally, remote work"
-      ]
+        "Ideally, remote work",
+      ],
     },
     {
       title: "What can i offer",
@@ -80,45 +80,74 @@ export default () => ({
         "Responsibility for their work",
         "Adequate attitude to comments and criticism",
         "Quick start to work",
-        "Love for clean and clear coding (kiss, dry)"
-      ]
-    }
-  ],
-  contacts_ru: [
-    { title: "phone", icon: "mdi-phone", ctx: "+7 999 002-61-98" },
-    { title: "email", icon: "mdi-email", ctx: "nikita.kirdiapin@gmail.com" },
-    { title: "location", icon: "mdi-map-marker", ctx: "Россия, Москва" },
-    {
-      title: "position",
-      icon: "mdi-check-circle-outline",
-      ctx: "Открыт к предложениям"
-    }
-  ],
-  contacts_en: [
-    { title: "phone", icon: "mdi-phone", ctx: "+7 999 002-61-98" },
-    { title: "email", icon: "mdi-email", ctx: "nikita.kirdiapin@gmail.com" },
-    { title: "location", icon: "mdi-map-marker", ctx: "Russia, Moscow" },
-    {
-      title: "position",
-      icon: "mdi-check-circle-outline",
-      ctx: "Available for offer"
-    }
-  ],
-  social: [
-    {
-      title: "github",
-      src: "https://github.com/mrblond1n",
-      icon: "mdi-github"
+        "Love for clean and clear coding (kiss, dry)",
+      ],
     },
-    {
-      title: "linkedin",
-      src: "https://www.linkedin.com/in/ipestilenz/",
-      icon: "mdi-linkedin"
-    },
-    {
-      title: "vk",
-      src: "https://vk.com/ipestilenz",
-      icon: "mdi-vk"
-    }
-  ]
+  ],
+  contacts_ru: {
+    title: "Контакты",
+    list: [
+      {
+        title: "phone",
+        icon: "mdi-phone",
+        text: "+7 999 002-61-98",
+        src: "tel:+79990026198",
+      },
+      {
+        title: "email",
+        icon: "mdi-email",
+        text: "nikita.kirdiapin@gmail.com",
+        src: "mailto:nikita.kirdiapin@gmail.com",
+      },
+      { title: "location", icon: "mdi-map-marker", text: "Россия, Москва" },
+      {
+        title: "position",
+        icon: "mdi-check-circle-outline",
+        text: "Открыт к предложениям",
+      },
+    ],
+  },
+  contacts_en: {
+    title: "Contacts",
+    list: [
+      {
+        title: "phone",
+        icon: "mdi-phone",
+        text: "+7 999 002-61-98",
+        src: "tel:+79990026198",
+      },
+      {
+        title: "email",
+        icon: "mdi-email",
+        text: "nikita.kirdiapin@gmail.com",
+        src: "mailto:nikita.kirdiapin@gmail.com",
+      },
+      { title: "location", icon: "mdi-map-marker", text: "Russia, Moscow" },
+      {
+        title: "position",
+        icon: "mdi-check-circle-outline",
+        text: "Available for offer",
+      },
+    ],
+  },
+  social: {
+    title: "Соцсети",
+    list: [
+      {
+        text: "Github",
+        src: "https://github.com/mrblond1n",
+        icon: "mdi-github",
+      },
+      {
+        text: "LinkedIn",
+        src: "https://www.linkedin.com/in/ipestilenz/",
+        icon: "mdi-linkedin",
+      },
+      {
+        text: "VKontakte",
+        src: "https://vk.com/ipestilenz",
+        icon: "mdi-vk",
+      },
+    ],
+  },
 });

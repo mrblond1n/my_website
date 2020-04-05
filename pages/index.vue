@@ -18,6 +18,12 @@
           ></v-img>
           <v-card-title class="display-1 text-uppercase">{{info.name}}</v-card-title>
           <v-card-subtitle>{{info.position}}</v-card-subtitle>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn icon color="yellow">
+              <v-icon>mdi-file-account</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-layout>
     </section>

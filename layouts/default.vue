@@ -3,8 +3,8 @@
     <app-nav />
     <app-header />
     <div class="background"></div>
-    <v-content class="main__content">
-      <v-container class="h-100">
+    <v-content>
+      <v-container>
         <nuxt />
       </v-container>
     </v-content>
@@ -57,16 +57,14 @@ body
   color: black
 section
   width: 100%
-.main__content
-  // background: url("~assets/background.jpeg") center center / cover no-repeat
-  // background-attachment: fixed
-  // -webkit-background-attachment: fixed
 #cursor-fx
   z-index: 9999
   .cursor-fx__inner__outside
     box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ffdd1b,0 0 35px #ffdd1b, 0 0 40px #ffdd1b, 0 0 50px #ffdd1b, 0 0 75px #ffdd1b
     width: 84px
     height: 84px
+  .cursor-fx__inner__inside
+    border: 1px solid #1A237E
 
 .background
   min-height: 100%

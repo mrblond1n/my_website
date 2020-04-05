@@ -25,7 +25,7 @@ export default () => ({
       ],
     },
     {
-      title: "Чего я ищу",
+      title: "Что я ищу",
       list: [
         "Интересные и нетривиальные задачи",
         "Возможности роста и самосовершенствования",
@@ -147,6 +147,11 @@ export default () => ({
         text: "VKontakte",
         src: "https://vk.com/ipestilenz",
         icon: "mdi-vk",
+      },
+      {
+        text: "Telegram",
+        src: "https://teleg.run/rollyscrolly",
+        icon: "mdi-telegram",
       },
     ],
   },

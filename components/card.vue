@@ -2,7 +2,7 @@
   <client-only>
     <v-card class="ma-5 pa-3" min-width="300" min-height="400" elevation="24">
       <v-card-title v-text="info.title" />
-      <v-list :disabled="disabled" :dense="dense">
+      <v-list :disabled="disabled" :dense="dense" color="rgb(184, 184, 184)" light>
         <v-list-item
           v-for="(item, i) in info.list"
           :key="i"

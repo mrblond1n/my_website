@@ -51,6 +51,8 @@ body
   cursor: none
 .card
   color: black
+section
+  width: 100%
 .main__content
   background: url("~assets/background.jpeg") center center / cover no-repeat
   background-attachment: fixed

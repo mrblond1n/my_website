@@ -10,16 +10,16 @@ export default () => ({
     src: "photo.jpg"
   },
   about_ru: [
-    {
-      title: "Основной стек технологий",
-      list: {
-        front: ["HTML5", "css/sass/scss", "javascript"],
-        vcs: ["git"],
-        js_library: ["Vue Js", "Nuxt Js", "React"],
-        css_library: ["Vuetify", "Bootstrap", "Element"],
-        ide: ["vscode"]
-      }
-    },
+    // {
+    //   title: "Основной стек технологий",
+    //   list: [
+    //     { title: '', list: ["HTML5", "css/sass/scss", "javascript"] },
+    //     { vcs: ["git"] },
+    //     { js_library: ["Vue Js", "Nuxt Js", "React"] },
+    //     { css_library: ["Vuetify", "Bootstrap", "Element"] },
+    //     { ide: ["vscode"] }
+    //   ]
+    // },
     {
       title: "Чего я ищу",
       list: [

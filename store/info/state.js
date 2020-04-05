@@ -20,7 +20,8 @@ export default () => ({
         "Опыт разработки на фреймворках Vue/Nuxt",
         "Опыт работы с webpack, gulp",
         "Опыт работы с VCS (git)",
-        "AJAX, WebSocket, понимание принципов функционирования сети Интернет и протокола HTTP",
+        "Знания в AJAX, WebSocket, понимание принципов функционирования сети Интернет и протокола HTTP",
+        "Работа со сторонними API",
         "Препроцессоры Sass/Scss и графические библиотеки 'Bootstrap', 'Vuetify'",
       ],
     },
@@ -59,6 +60,7 @@ export default () => ({
         "Experience with webpack, gulp",
         "Experience with VCS (git)",
         "AJAX, WebSocket, understanding of the principles of the Internet and the HTTP protocol",
+        "Work with API`s",
         "Preprocessors Sass/Scss and graphic libraries 'Bootstrap', 'Vuetify'",
       ],
     },
@@ -130,8 +132,33 @@ export default () => ({
       },
     ],
   },
-  social: {
+  social_ru: {
     title: "Соцсети",
+    list: [
+      {
+        text: "Github",
+        src: "https://github.com/mrblond1n",
+        icon: "mdi-github",
+      },
+      {
+        text: "LinkedIn",
+        src: "https://www.linkedin.com/in/ipestilenz/",
+        icon: "mdi-linkedin",
+      },
+      {
+        text: "VKontakte",
+        src: "https://vk.com/ipestilenz",
+        icon: "mdi-vk",
+      },
+      {
+        text: "Telegram",
+        src: "https://teleg.run/rollyscrolly",
+        icon: "mdi-telegram",
+      },
+    ],
+  },
+  social_en: {
+    title: "Social",
     list: [
       {
         text: "Github",

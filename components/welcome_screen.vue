@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import disabled_scroll from "~/library/disabled_scroll";
+
 export default {
   data() {
     return {
@@ -38,6 +40,7 @@ export default {
       this.active_destroy = true;
       setTimeout(() => {
         this.$store.dispatch("shared/welcome_screen", false);
+        // disabled_scroll(false);
       }, 4000);
     }
   }
@@ -50,7 +53,7 @@ export default {
 .welcome-screen
   height: 100%
   width: 100%
-  position: absolute
+  position: fixed
   background: #000
   z-index: 9999
 

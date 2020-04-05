@@ -1,13 +1,14 @@
 <template>
   <client-only>
-    <v-card class="ma-5 pa-3" min-width="300" min-height="400" elevation="24">
+    <v-card class="ma-5 pa-3" min-width="300px" color="rgba(0,0,0, .8)" elevation="24">
       <v-card-title v-text="info.title" />
-      <v-list :disabled="disabled" :dense="dense" color="rgb(184, 184, 184)" light>
+
+      <v-list :disabled="disabled">
         <v-list-item
           v-for="(item, i) in info.list"
           :key="i"
-          :href="item.src ? item.src : false"
-          :target="item.src ? '_blank' : false"
+          :href="item.src ? item.src : ''"
+          :target="item.src ? '_blank' : ''"
         >
           <v-list-item-icon v-if="item.icon">
             <v-icon v-text="item.icon" />
@@ -41,4 +42,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card {
+  background: rgb(41, 155, 250);
+  background: linear-gradient(
+    90deg,
+    rgba(41, 155, 250, 1) 0%,
+    rgba(211, 65, 236, 1) 100%
+  );
+}
 </style>

@@ -25,6 +25,7 @@ import welcomeScreen from "~/components/welcome_screen";
 import appModal from "~/components/modal";
 
 import detect_user_lang from "~/library/detect_user_lang";
+import disabled_scroll from "~/library/disabled_scroll";
 
 export default {
   components: {
@@ -33,6 +34,20 @@ export default {
     appHeader,
     welcomeScreen,
     appModal
+  },
+  head() {
+    return {
+      bodyAttrs: {
+        class: this.$store.getters["shared/welcome_screen"]
+          ? "stop-scrolling"
+          : ""
+      },
+      htmlAttrs: {
+        class: this.$store.getters["shared/welcome_screen"]
+          ? "stop-scrolling"
+          : ""
+      }
+    };
   },
   data() {
     return { show_welcome_screen: true };
@@ -44,6 +59,8 @@ export default {
   },
   mounted() {
     this.$store.dispatch("shared/lang", detect_user_lang());
+    // disabled_scroll(!this.$store.getters["shared/welcome_screen"]);
+    // disabled_scroll(true);
   }
 };
 </script>
@@ -57,6 +74,10 @@ body
   color: black
 section
   width: 100%
+.stop-scrolling
+  height: 100%
+  overflow: hidden
+
 #cursor-fx
   z-index: 9999
   .cursor-fx__inner__outside

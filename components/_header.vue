@@ -1,6 +1,7 @@
 <template>
   <v-app-bar clipped-left fixed app color="rgba(0, 0, 0, .5)">
-    <v-app-bar-nav-icon @click.stop="show_drawer" />
+    <v-app-bar-nav-icon @click.stop="show_drawer" class="d-inline-flex d-sm-none" />
+    <v-tab class="d-inline-flex d-sm-none" to="/">{{lang === 'ru' ? 'Главная': 'Home'}}</v-tab>
     <v-tabs align-with-title color="warning" class="d-none d-sm-flex">
       <v-tab v-for="item in nav_list" :to="item.path" :key="item.name">{{item.name}}</v-tab>
     </v-tabs>
@@ -15,7 +16,7 @@
         </v-list-item>
       </v-list>
     </v-menu>
-    <v-btn disabled class="ml-5">
+    <v-btn disabled class="ml-5 d-none">
       <v-icon>mdi-account</v-icon>
     </v-btn>
   </v-app-bar>

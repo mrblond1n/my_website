@@ -20,6 +20,9 @@
           light
           color="#ffc107"
           @click="close"
+          tag="a"
+          :href="require(`@/static/files/resume_${lang}.pdf`)"
+          download="resume"
           v-text="lang === 'ru' ? 'Скачать': 'Save'"
         >Скачать</v-btn>
       </v-card-actions>

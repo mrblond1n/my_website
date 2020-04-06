@@ -9,7 +9,7 @@
       </v-container>
     </v-content>
     <welcome-screen v-if="$store.getters['shared/welcome_screen']" />
-    <app-keyboard class="keyboard__icons" />
+    <app-keyboard class="keyboard__icons d-none d-sm-flex" />
     <app-footer />
     <client-only>
       <cursor-fx color="#fff" color-hover="#fff" />

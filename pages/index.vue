@@ -11,6 +11,8 @@
         <v-card max-width="300px" elevation="12" class="my-5">
           <v-img
             :src="require(`~/assets/${info.src}`)"
+            transition="load"
+            :lazy-src="require(`~/assets/${info.src}`)"
             class="white--text align-end"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="300px"
@@ -20,8 +22,8 @@
               <v-icon>mdi-file-account</v-icon>
             </v-btn>
           </v-img>
-          <v-card-title class="display-1 text-uppercase text-break">{{info.name}}</v-card-title>
-          <v-card-subtitle>{{info.position}}</v-card-subtitle>
+          <v-card-title class="display-1 text-uppercase text-break" v-text="info.name" />
+          <v-card-subtitle v-text="info.position" />
         </v-card>
       </v-layout>
     </section>
@@ -51,6 +53,9 @@ export default {
     show_modal() {
       this.$store.dispatch("shared/modal", true);
     }
+  },
+  mounted() {
+    // console.log(this.$store.getters["shared/welcome_screen"]);
   }
 };
 </script>

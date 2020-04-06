@@ -5,8 +5,8 @@ export default {
   pageTransition: {
     name: "page",
     mode: "out-in",
-    enterActiveClass: "animated fadeInRight",
-    leaveActiveClass: "animated fadeOutRight",
+    enterActiveClass: "animated fadeIn",
+    leaveActiveClass: "animated fadeOut",
   },
   /*
    ** Headers of the page

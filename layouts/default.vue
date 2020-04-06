@@ -1,14 +1,15 @@
 <template>
-  <v-app dark ref="app">
+  <v-app dark ref="app" @keydown="test">
     <app-nav />
     <app-header />
     <div class="background"></div>
-    <v-content>
+    <v-content @keydown="test">
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
     <welcome-screen v-if="$store.getters['shared/welcome_screen']" />
+    <app-keyboard class="keyboard__icons" />
     <app-footer />
     <client-only>
       <cursor-fx color="#fff" color-hover="#fff" />
@@ -23,9 +24,11 @@ import appNav from "~/components/_navigation";
 import appHeader from "~/components/_header";
 import welcomeScreen from "~/components/welcome_screen";
 import appModal from "~/components/modal";
+import appKeyboard from "~/components/keyboard";
 
 import detect_user_lang from "~/library/detect_user_lang";
 import disabled_scroll from "~/library/disabled_scroll";
+import nav_arrow_keys from "~/library/navigation_arrow_keys";
 
 export default {
   components: {
@@ -33,7 +36,8 @@ export default {
     appNav,
     appHeader,
     welcomeScreen,
-    appModal
+    appModal,
+    appKeyboard
   },
   head() {
     return {
@@ -52,15 +56,25 @@ export default {
   data() {
     return { show_welcome_screen: true };
   },
+  methods: {
+    test(e) {
+      console.log(e);
+    }
+  },
   computed: {
     drawer() {
       return this.$store.getters["shared/drawer"];
+    },
+    nav_list() {
+      return this.$store.getters[`navigation/list_${this.lang}`];
+    },
+    lang() {
+      return this.$store.getters["shared/lang"];
     }
   },
   mounted() {
     this.$store.dispatch("shared/lang", detect_user_lang());
-    // disabled_scroll(!this.$store.getters["shared/welcome_screen"]);
-    // disabled_scroll(true);
+    nav_arrow_keys(this.nav_list, this.$router);
   }
 };
 </script>
@@ -77,6 +91,11 @@ section
 .stop-scrolling
   height: 100%
   overflow: hidden
+
+.keyboard__icons
+  position: fixed
+  right: 20px
+  bottom: 50px
 
 #cursor-fx
   z-index: 9999

@@ -11,7 +11,6 @@
         <v-card max-width="300px" elevation="12" class="my-5">
           <v-img
             :src="require(`~/assets/${info.src}`)"
-            transition="load"
             :lazy-src="require(`~/assets/${info.src}`)"
             class="white--text align-end"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"

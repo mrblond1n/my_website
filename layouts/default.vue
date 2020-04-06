@@ -1,9 +1,9 @@
 <template>
-  <v-app dark ref="app" @keydown="test">
+  <v-app dark ref="app">
     <app-nav />
     <app-header />
     <div class="background"></div>
-    <v-content @keydown="test">
+    <v-content>
       <v-container>
         <nuxt />
       </v-container>
@@ -27,7 +27,6 @@ import appModal from "~/components/modal";
 import appKeyboard from "~/components/keyboard";
 
 import detect_user_lang from "~/library/detect_user_lang";
-import disabled_scroll from "~/library/disabled_scroll";
 import nav_arrow_keys from "~/library/navigation_arrow_keys";
 
 export default {
@@ -55,11 +54,6 @@ export default {
   },
   data() {
     return { show_welcome_screen: true };
-  },
-  methods: {
-    test(e) {
-      console.log(e);
-    }
   },
   computed: {
     drawer() {

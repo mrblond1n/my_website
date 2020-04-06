@@ -19,7 +19,7 @@ export default {
       {
         name: "viewport",
         content:
-          "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui",
+          "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
       },
       {
         hid: "description",
@@ -51,6 +51,7 @@ export default {
     { src: "~/plugins/aos", ssr: false },
     { src: "~/plugins/cursor-fx", ssr: false },
     { src: "~/plugins/vue-pdf.js", ssr: false },
+    { src: "~/plugins/vuetify", ssr: false },
   ],
   /*
    ** Nuxt.js dev-modules

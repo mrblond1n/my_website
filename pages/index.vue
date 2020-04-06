@@ -1,6 +1,6 @@
 <template>
   <v-layout column justify-center align-center>
-    <div class="wrapper my-5">
+    <div class="wrapper my-12">
       <h1
         class="text text-center"
         :class="{active: !$store.getters['shared/welcome_screen']}"

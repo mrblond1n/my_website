@@ -1,6 +1,6 @@
 <template>
   <v-layout column justify-center align-center>
-    <h1 class="display-2 text-uppercase my-5">{{lang === 'ru' ? 'Связаться': 'Get in touch'}}</h1>
+    <h1 class="display-2 text-uppercase my-12">{{lang === 'ru' ? 'Связаться': 'Get in touch'}}</h1>
     <section>
       <v-layout justify-space-around wrap>
         <app-card width="300" :info="contacts"></app-card>

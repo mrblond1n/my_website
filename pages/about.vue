@@ -1,6 +1,6 @@
 <template>
   <v-layout column justify-center align-center style="width: 100%">
-    <h1 class="display-2 text-uppercase my-5">{{lang === 'ru' ? 'Резюме': 'Resume'}}</h1>
+    <h1 class="display-2 text-uppercase my-12">{{lang === 'ru' ? 'Резюме': 'Resume'}}</h1>
     <section v-for="(item, i) in info" :key="i">
       <app-card disabled dense :info="item" data-aos="fade" />
     </section>

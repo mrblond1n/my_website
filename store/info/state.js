@@ -25,6 +25,14 @@ export default () => ({
         "Препроцессоры Sass/Scss и графические библиотеки 'Bootstrap', 'Vuetify'",
       ],
     },
+    // {
+    //   title: 'Я работал с такими сервисами как',
+    //   list: [
+    //     'Firebase Database',
+    //     'Openweathermap',
+    //     'Google/Yandex maps'
+    //   ]
+    // },
     {
       title: "Что я ищу",
       list: [
@@ -64,6 +72,14 @@ export default () => ({
         "Preprocessors Sass/Scss and graphic libraries 'Bootstrap', 'Vuetify'",
       ],
     },
+    // {
+    //   title: 'I work with...',
+    //   list: [
+    //     'Firebase Database',
+    //     'Openweathermap',
+    //     'Google/Yandex maps'
+    //   ]
+    // },
     {
       title: "Looking for...",
       list: [

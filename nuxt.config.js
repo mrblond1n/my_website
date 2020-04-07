@@ -12,8 +12,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: "%s - " + process.env.npm_package_name,
-    title: process.env.npm_package_name || "",
+    titleTemplate: "%s - " + 'website',
+    title: 'Nikita Kirdiapin',
     meta: [
       { charset: "utf-8" },
       {

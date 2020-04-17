@@ -168,7 +168,7 @@ export default () => ({
       },
       {
         text: "Telegram",
-        src: "https://teleg.run/rollyscrolly",
+        src: "tg://resolve?domain=rollyscrolly",
         icon: "mdi-telegram",
       },
     ],

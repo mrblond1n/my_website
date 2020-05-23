@@ -14,9 +14,9 @@
             height="300px"
             width="100%"
           >
-            <v-btn v-if="false" icon color="warning" @click="show_modal">
+            <!-- <v-btn v-if="true" icon color="warning">
               <v-icon>mdi-file-account</v-icon>
-            </v-btn>
+            </v-btn>-->
           </v-img>
           <v-card-title class="display-1 text-uppercase text-break" v-text="info.name" />
           <v-card-subtitle v-text="info.position" />
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   components: {},
   data() {
@@ -52,11 +52,6 @@ export default {
     ...mapState("shared", ["lang"]),
     info() {
       return this.lang === "ru" ? this.home_ru : this.home_en;
-    }
-  },
-  methods: {
-    show_modal() {
-      this.$store.dispatch("shared/modal", true);
     }
   }
 };

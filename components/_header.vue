@@ -11,7 +11,7 @@
         <v-btn color="primary" dark v-on="on">{{lang}}</v-btn>
       </template>
       <v-list>
-        <v-list-item v-for="(item, index) in languages" :key="index" @click="change_lang">
+        <v-list-item v-for="(item, index) in languages" :key="index" @click="changed_lang">
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -36,6 +36,10 @@ export default {
     lang: {
       type: String,
       default: "ru"
+    },
+    change_lang: {
+      type: Function,
+      default: () => {}
     }
   },
   data() {
@@ -47,8 +51,8 @@ export default {
     show_drawer() {
       this.$emit("show_drawer", true);
     },
-    change_lang(e) {
-      this.$store.dispatch("shared/lang", e.target.textContent);
+    changed_lang({ target }) {
+      this.change_lang(target.textContent);
     }
   }
 };

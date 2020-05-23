@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 export default {
   props: {
     nav_list: {

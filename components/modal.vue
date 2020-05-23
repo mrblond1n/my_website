@@ -32,22 +32,29 @@
 
 <script>
 export default {
+  props: {
+    lang: {
+      type: String,
+      default: "ru"
+    },
+    modal: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       dialog: true
     };
   },
   computed: {
-    modal() {
-      return this.$store.getters["shared/modal"];
-    },
-    lang() {
-      return this.$store.getters["shared/lang"];
-    }
-  },
-  methods: {
-    close() {
-      this.$store.dispatch("shared/modal", false);
+    show_modal: {
+      get() {
+        return this.modal;
+      },
+      set(val) {
+        this.$emit("show_modal", val);
+      }
     }
   }
 };

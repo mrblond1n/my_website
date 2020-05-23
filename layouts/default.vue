@@ -1,7 +1,12 @@
 <template>
   <v-app dark ref="app">
     <app-nav :drawer="drawer" @show_drawer="show_drawer" :nav_list="nav_list" :lang="lang" />
-    <app-header @show_drawer="show_drawer" :nav_list="nav_list" :lang="lang" />
+    <app-header
+      @show_drawer="show_drawer"
+      :nav_list="nav_list"
+      :lang="lang"
+      :change_lang="change_lang"
+    />
     <div class="background"></div>
     <v-content>
       <v-container>
@@ -14,7 +19,7 @@
     <client-only>
       <cursor-fx color="#fff" color-hover="#fff" />
     </client-only>
-    <app-modal />
+    <app-modal :lang="lang" :modal="modal" @show_modal="show_modal" />
   </v-app>
 </template>
 
@@ -29,7 +34,7 @@ import appKeyboard from "~/components/keyboard";
 import detect_user_lang from "~/library/detect_user_lang";
 import nav_arrow_keys from "~/library/navigation_arrow_keys";
 
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   components: {
     appFooter,
@@ -64,12 +69,17 @@ export default {
         { name: "контакты", path: "/contacts", icon: "mdi-account" }
       ],
       welcome_screen: false,
-      drawer: false
+      drawer: false,
+      modal: false
     };
   },
   methods: {
+    ...mapActions({ change_lang: "shared/lang" }),
     show_drawer(val) {
       this.drawer = val;
+    },
+    show_modal(val) {
+      this.modal = val;
     },
     hide_screen() {
       this.welcome_screen = false;
@@ -82,7 +92,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch("shared/lang", detect_user_lang());
+    this.change_lang(detect_user_lang());
     nav_arrow_keys(this.nav_list, this.$router);
   }
 };

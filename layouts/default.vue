@@ -1,14 +1,14 @@
 <template>
   <v-app dark ref="app">
-    <app-nav />
-    <app-header />
+    <app-nav :drawer="drawer" @show_drawer="show_drawer" :nav_list="nav_list" :lang="lang" />
+    <app-header @show_drawer="show_drawer" :nav_list="nav_list" :lang="lang" />
     <div class="background"></div>
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <welcome-screen v-if="$store.getters['shared/welcome_screen']" />
+    <welcome-screen v-if="welcome_screen" @hide_screen="hide_screen" />
     <app-keyboard class="keyboard__icons d-none d-sm-flex" />
     <app-footer />
     <client-only>
@@ -29,6 +29,7 @@ import appKeyboard from "~/components/keyboard";
 import detect_user_lang from "~/library/detect_user_lang";
 import nav_arrow_keys from "~/library/navigation_arrow_keys";
 
+import { mapState } from "vuex";
 export default {
   components: {
     appFooter,
@@ -41,9 +42,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class: this.$store.getters["shared/welcome_screen"]
-          ? "stop-scrolling"
-          : ""
+        class: this.welcome_screen ? "stop-scrolling" : ""
       },
       htmlAttrs: {
         class: this.$store.getters["shared/welcome_screen"]
@@ -53,17 +52,33 @@ export default {
     };
   },
   data() {
-    return { show_welcome_screen: true };
+    return {
+      list_en: [
+        { name: "home", path: "/", icon: "mdi-home" },
+        { name: "about", path: "/about", icon: "mdi-information" },
+        { name: "contacts", path: "/contacts", icon: "mdi-account" }
+      ],
+      list_ru: [
+        { name: "главная", path: "/", icon: "mdi-home" },
+        { name: "информация", path: "/about", icon: "mdi-information" },
+        { name: "контакты", path: "/contacts", icon: "mdi-account" }
+      ],
+      welcome_screen: false,
+      drawer: false
+    };
+  },
+  methods: {
+    show_drawer(val) {
+      this.drawer = val;
+    },
+    hide_screen() {
+      this.welcome_screen = false;
+    }
   },
   computed: {
-    drawer() {
-      return this.$store.getters["shared/drawer"];
-    },
+    ...mapState("shared", ["lang"]),
     nav_list() {
-      return this.$store.getters[`navigation/list_${this.lang}`];
-    },
-    lang() {
-      return this.$store.getters["shared/lang"];
+      return this.lang === "ru" ? this.list_ru : this.list_en;
     }
   },
   mounted() {

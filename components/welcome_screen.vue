@@ -45,8 +45,8 @@ export default {
     destroy_welcome_screen() {
       this.active_destroy = true;
       setTimeout(() => {
-        this.$store.dispatch("shared/welcome_screen", false);
-        // disabled_scroll(false);
+        console.log("asd");
+        this.$emit("hide_screen");
       }, 4000);
     }
   }

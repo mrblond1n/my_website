@@ -12,22 +12,118 @@
 
 <script>
 import appCard from "~/components/card";
+import { mapState } from "vuex";
 export default {
   components: {
     appCard
   },
   data() {
-    return {};
+    return {
+      contacts_ru: {
+        title: "Контакты",
+        list: [
+          {
+            title: "phone",
+            icon: "mdi-phone",
+            text: "+7 999 002-61-98",
+            src: "tel:+79990026198"
+          },
+          {
+            title: "email",
+            icon: "mdi-email",
+            text: "nikita.kirdiapin@gmail.com",
+            src: "mailto:nikita.kirdiapin@gmail.com"
+          },
+          { title: "location", icon: "mdi-map-marker", text: "Россия, Москва" },
+          {
+            title: "position",
+            icon: "mdi-check-circle-outline",
+            text: "Открыт к предложениям"
+          }
+        ]
+      },
+      contacts_en: {
+        title: "Contacts",
+        list: [
+          {
+            title: "phone",
+            icon: "mdi-phone",
+            text: "+7 999 002-61-98",
+            src: "tel:+79990026198"
+          },
+          {
+            title: "email",
+            icon: "mdi-email",
+            text: "nikita.kirdiapin@gmail.com",
+            src: "mailto:nikita.kirdiapin@gmail.com"
+          },
+          { title: "location", icon: "mdi-map-marker", text: "Russia, Moscow" },
+          {
+            title: "position",
+            icon: "mdi-check-circle-outline",
+            text: "Available for offer"
+          }
+        ]
+      },
+      social_ru: {
+        title: "Соцсети",
+        list: [
+          {
+            text: "Github",
+            src: "https://github.com/mrblond1n",
+            icon: "mdi-github"
+          },
+          {
+            text: "LinkedIn",
+            src: "https://www.linkedin.com/in/ipestilenz/",
+            icon: "mdi-linkedin"
+          },
+          {
+            text: "VKontakte",
+            src: "https://vk.com/ipestilenz",
+            icon: "mdi-vk"
+          },
+          {
+            text: "Telegram",
+            src: "tg://resolve?domain=rollyscrolly",
+            icon: "mdi-telegram"
+          }
+        ]
+      },
+      social_en: {
+        title: "Social",
+        list: [
+          {
+            text: "Github",
+            src: "https://github.com/mrblond1n",
+            icon: "mdi-github"
+          },
+          {
+            text: "LinkedIn",
+            src: "https://www.linkedin.com/in/ipestilenz/",
+            icon: "mdi-linkedin"
+          },
+          {
+            text: "VKontakte",
+            src: "https://vk.com/ipestilenz",
+            icon: "mdi-vk"
+          },
+          {
+            text: "Telegram",
+            src: "https://teleg.run/rollyscrolly",
+            icon: "mdi-telegram"
+          }
+        ]
+      }
+    };
   },
   computed: {
-    lang() {
-      return this.$store.getters["shared/lang"];
-    },
+    ...mapState("shared", ["lang"]),
     contacts() {
-      return this.$store.getters[`info/contacts_${this.lang}`];
+      return this.lang === "ru" ? this.contacts_ru : this.contacts_en;
     },
     social() {
-      return this.$store.getters[`info/social_${this.lang}`];
+      return this.lang === "en" ? this.social_ru : this.social_en;
     }
   }
 };

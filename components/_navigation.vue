@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" temporary app @input="close_drawer">
+  <v-navigation-drawer v-model="show_drawer" temporary app>
     <v-list>
       <v-list-item router exact v-for="item in nav_list" :to="item.path" :key="item.name">
         <v-list-item-action>
@@ -14,24 +14,30 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  computed: {
+  props: {
+    nav_list: {
+      type: Array,
+      default: () => {}
+    },
     drawer: {
-      get() {
-        return this.$store.getters["shared/drawer"];
-      },
-      set: () => {}
+      type: Boolean,
+      default: false
     },
-    nav_list() {
-      return this.$store.getters[`navigation/list_${this.lang}`];
-    },
-    lang() {
-      return this.$store.getters["shared/lang"];
+    lang: {
+      type: String,
+      default: "ru"
     }
   },
-  methods: {
-    close_drawer(val) {
-      this.$store.dispatch("shared/drawer", val);
+  computed: {
+    show_drawer: {
+      get() {
+        return this.drawer;
+      },
+      set(val) {
+        this.$emit("show_drawer", val);
+      }
     }
   }
 };

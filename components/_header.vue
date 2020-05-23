@@ -1,6 +1,6 @@
 <template>
   <v-app-bar clipped-left fixed app color="rgba(0, 0, 0, .5)">
-    <v-app-bar-nav-icon @click.stop="show_drawer" class="d-inline-flex d-sm-none" />
+    <v-app-bar-nav-icon @click="show_drawer" class="d-inline-flex d-sm-none" />
     <v-tab class="d-inline-flex d-sm-none" to="/">{{lang === 'ru' ? 'Главная': 'Home'}}</v-tab>
     <v-tabs align-with-title color="warning" class="d-none d-sm-flex">
       <v-tab v-for="item in nav_list" :to="item.path" :key="item.name">{{item.name}}</v-tab>
@@ -24,6 +24,20 @@
 
 <script>
 export default {
+  props: {
+    nav_list: {
+      type: Array,
+      default: () => {}
+    },
+    drawer: {
+      type: Boolean,
+      default: false
+    },
+    lang: {
+      type: String,
+      default: "ru"
+    }
+  },
   data() {
     return {
       languages: [{ title: "en" }, { title: "ru" }]
@@ -31,18 +45,10 @@ export default {
   },
   methods: {
     show_drawer() {
-      this.$store.dispatch("shared/drawer", true);
+      this.$emit("show_drawer", true);
     },
     change_lang(e) {
       this.$store.dispatch("shared/lang", e.target.textContent);
-    }
-  },
-  computed: {
-    nav_list() {
-      return this.$store.getters[`navigation/list_${this.lang}`];
-    },
-    lang() {
-      return this.$store.getters["shared/lang"];
     }
   }
 };

@@ -1,10 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <div class="wrapper my-12">
-      <h1
-        class="text text-center"
-        :class="{active: !$store.getters['shared/welcome_screen']}"
-      >Made with NUXT JS</h1>
+      <h1 class="text text-center" :class="{active: true}">Made with NUXT JS</h1>
     </div>
     <section>
       <v-layout column align-center justify-space-around>
@@ -17,7 +14,7 @@
             height="300px"
             width="100%"
           >
-            <v-btn icon color="warning" @click="show_modal">
+            <v-btn v-if="false" icon color="warning" @click="show_modal">
               <v-icon>mdi-file-account</v-icon>
             </v-btn>
           </v-img>
@@ -30,6 +27,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   components: {},
   data() {
@@ -37,24 +35,29 @@ export default {
       card: {
         title: "Pre-fab homes",
         src: "photo.jpg"
+      },
+      home_ru: {
+        name: "Никита Кирдяпин",
+        position: "Frontend developer - VueJs",
+        src: "photo.jpg"
+      },
+      home_en: {
+        name: "Nikita Kirdiapin",
+        position: "Frontend developer - VueJs",
+        src: "photo.jpg"
       }
     };
   },
   computed: {
-    lang() {
-      return this.$store.getters["shared/lang"];
-    },
+    ...mapState("shared", ["lang"]),
     info() {
-      return this.$store.getters[`info/home_${this.lang}`];
+      return this.lang === "ru" ? this.home_ru : this.home_en;
     }
   },
   methods: {
     show_modal() {
       this.$store.dispatch("shared/modal", true);
     }
-  },
-  mounted() {
-    // console.log(this.$store.getters["shared/welcome_screen"]);
   }
 };
 </script>
